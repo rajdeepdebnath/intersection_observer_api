@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersection Observer API</title>
+  </head>
+  <body>
+    <div
+      id="scrollArea"
+      style="
+        width: 70vw;
+        height: 90vh;
+        background-color: cadetblue;
+        overflow: scroll;
+        position: fixed;
+        margin-top: 10px;
+      "
+    >
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div
+        id="listItem"
+        style="
+          background-color: black;
+          width: 200px;
+          height: 200px;
+          position: relative;
+          top: 50px;
+          left: 50px;
+        "
+      ></div>
+    </div>
+
+    <script type="text/javascript">
+      let options = {
+        root: document.querySelector("#scrollArea"),
+        rootMargin: "10px",
+        threshold: 1.0, //try different values like 0.2, 0.5 etc
+      };
+
+      let observer = new IntersectionObserver((args) => {
+        console.log(args);
+      }, options);
+
+      let target = document.querySelector("#listItem");
+      observer.observe(target);
+    </script>
+  </body>
+</html>
